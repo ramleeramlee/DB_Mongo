@@ -13,7 +13,7 @@
     </tr>
 <c:forEach var="vo" items="${list}" varStatus="status"> 
     <tr background="lime">
-        <td>${status.count}</td> 
+        <td>${status.count}</td> <!-- 1부터 순서 -->
         
         <td>${vo.name}</td>
         

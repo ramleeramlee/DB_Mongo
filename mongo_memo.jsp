@@ -8,13 +8,35 @@
 <%@ include file="header.jsp"%>
 <script>
     $(function() {
-        $.ajax({
+        $.ajax({ // 창 열리면 바로 보임
         	url: "list.memo",
         	success: function(table) {
 				$('#result').html(table)
 			}
-        })
-    });
+        }) //ajax
+        $('#push').click(function() { //push클릭했을 때 
+			$.ajax({
+				url: "insert.memo",
+				data: {
+					name: $('#name').val(),
+					content: $('#content').val(),
+					weather: $('#weather').val()
+				},
+				success: function() {
+				// insert성공하면 밑에 list요청한 결과를 가지고 와서 result에 넣자
+					$.ajax({
+						url : "list.memo",
+						success : function(result) {
+							$('#result').html(result)
+						}
+					}) //ajax
+					$('#name').val('')
+					$('#content').val('')
+					$('#weather').val('')
+				} //push insert success
+			}) //ajax
+		}) //push
+	}); //$
 </script>
 </head>
 <body>

@@ -10,11 +10,10 @@
 <body>
 <h2>메모장</h2>
 <form action="update.memo">
-	번호 : <input type="text" name="_id" value="${vo._id}" readonly="readonly" > <br>
+    변경할 id : <input name="_id" value="${vo._id}" readonly="readonly"> <br>
 	이름 : <input name="name" size="30" value="${vo.name}" readonly="readonly"> <br>
-	내용 : <input name="content" size="30" value="${vo.content}" class="td1"><br>
+	내용 : <input name="content" size="30" value="${vo.content}" style="background: pink"><br>
 	날씨 : <input name="weather" size="30" value="${vo.weather}" readonly="readonly"> <br>
-	날짜 : <input name="date" size="30" value="${vo.date}" readonly="readonly"> <br>
 	<button>메모 수정</button>
 </form>
 <hr color="red">
